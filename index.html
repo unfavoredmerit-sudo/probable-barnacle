@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unfavored Merit – Music & Merch</title>
+  <meta name="description" content="Music, merch, and media from Unfavored Merit." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Brand colors from your logo */
+      --um-gold:        #C89A2B;
+      --um-gold-dark:   #B18323;
+      --um-blue:        #4A61C1;
+      --um-blue-dark:   #3B50A1;
+
+      /* Backgrounds (light–medium tone) */
+      --um-bg:          #F3EBDD;   /* main body background */
+      --um-bg-soft:     #FAF8F2;   /* sections/cards */
+      --um-card-bg:     #FFFFFF;
+
+      /* Text */
+      --um-text-main:   #1F2933;
+      --um-text-muted:  #6B7280;
+
+      /* Borders / subtle lines */
+      --um-border-soft: #E2D6C4;
+
+      /* Shadows / radius */
+      --um-radius-lg:   18px;
+      --um-radius-pill: 999px;
+      --um-shadow-soft: 0 14px 30px rgba(0, 0, 0, 0.08);
+
+      /* Extra vars used by some classes */
+      --accent:        var(--um-blue);
+      --accent-soft:   #E5C76B;
+      --muted:         var(--um-text-muted);
+      --border:        var(--um-border-soft);
+      --card:          var(--um-card-bg);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--um-bg);
+      color: var(--um-text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .main-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    h1, h2, h3, h4 {
+      margin-top: 0;
+      color: var(--um-blue-dark);
+      letter-spacing: 0.03em;
+    }
+
+    a {
+      color: var(--um-blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--um-blue-dark);
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: linear-gradient(135deg, #fff8e8, #f0f4ff);
+      border-bottom: 1px solid var(--um-border-soft);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      position: relative;
+      z-index: 30;
+    }
+
+    .site-header .main-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 14px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-image {
+      height: 150px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 1.50rem;
+      color: var(--um-gold-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 1.50rem;
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--um-text-main);
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.7);
+      color: var(--um-blue-dark);
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      padding: 6px;
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      border-radius: 999px;
+      background-color: var(--um-text-main);
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .menu-toggle span + span {
+      margin-top: 4px;
+    }
+
+    /* Animate icon when open */
+    .nav-open .menu-toggle span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .nav-open .menu-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-open .menu-toggle span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* HERO LAYOUT */
+    .hero {
+      padding: 48px 0 36px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(200, 154, 43, 0.4);
+      background-color: rgba(250, 248, 242, 0.9);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--um-gold-dark);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.20rem;
+      color: var(--um-text-muted);
+      max-width: 540px;
+    }
+
+    .hero-buttons {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--um-text-muted);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #fffdf7, #f3ebdd);
+      border-radius: var(--um-radius-lg);
+      padding: 24px 20px;
+      box-shadow: var(--um-shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--um-text-muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(200, 154, 43, 0.6);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--um-gold-dark);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #1dde8c;
+      box-shadow: 0 0 6px rgba(29, 222, 140, 0.7);
+    }
+
+    .album-art {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 1.1rem;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #000;
+    }
+
+    .album-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .album-title {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 0.9rem;
+      right: 0.9rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .album-title span:first-child {
+      font-weight: 600;
+    }
+
+    .album-title span:last-child {
+      font-weight: 300;
+      font-size: 0.7rem;
+      color: #f5f5f5;
+    }
+
+    .album-tagline {
+      margin-top: 0.9rem;
+      font-size: 0.8rem;
+      color: var(--accent-soft);
+    }
+
+
+    /* FEATURED VIDEO */
+    .featured-video-section {
+      max-width: 80%;    /* shrink the overall card so it doesn’t overpower */
+      margin: 0 auto;
+    }
+
+    .featured-card {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 1.5rem;
+      align-items: stretch;
+      background: var(--card);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      box-shadow: var(--um-shadow-soft);
+    }
+
+    .featured-media {
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .video-wrapper img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .featured-title {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .featured-description {
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .primary-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.5rem;
+      padding: 0.65rem 1.3rem;
+      border-radius: var(--um-radius-pill);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      background: var(--um-gold);
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+                  background-color 0.12s ease, color 0.12s ease;
+    }
+
+    .primary-button:hover {
+      background: var(--um-gold-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(200, 154, 43, 0.4);
+    }
+
+
+
+    /* SECTIONS */
+    .section {
+      margin-top: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.3rem;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 420px;
+    }
+
+    
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: var(--um-radius-pill);
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+                  background-color 0.12s ease, color 0.12s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--um-gold);
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(200, 154, 43, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--um-gold-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(200, 154, 43, 0.45);
+    }
+
+    .btn-outline,
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--um-blue-dark);
+      border: 1px solid rgba(74, 97, 193, 0.35);
+    }
+
+    .btn-outline:hover,
+    .btn-secondary:hover {
+      background: rgba(244, 244, 255, 0.9);
+      transform: translateY(-1px);
+    }
+
+    /* MUSIC CARDS */
+    .music-grid {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .music-card {
+      background: var(--card);
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .music-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .music-title {
+      font-weight: 600;
+    }
+
+    .music-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-soft);
+    }
+
+    .music-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .music-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .chip-link {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(5, 6, 8, 0.8);
+      color: #f9fafb;
+    }
+
+    .chip-link:hover {
+      border-color: var(--accent);
+      color: var(--accent-soft);
+    }
+
+    /* MERCH */
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .merch-card {
+      background: var(--card);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .merch-image {
+      background: radial-gradient(circle at top, #2d3045 0, #050608 70%);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    .merch-body {
+      padding: 0.8rem 0.9rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .merch-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .merch-price {
+      font-size: 0.8rem;
+      color: var(--accent-soft);
+    }
+
+    .merch-link {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    .merch-link:hover {
+      color: var(--accent-soft);
+    }
+
+    /* ABOUT & CONTACT */
+
+    /* ABOUT / CONTACT */
+
+     #about p {
+       font-size: 1.1rem;
+       line-height: 1.65;
+       color: var(--text-main);
+       max-width: 650px;
+     }
+
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2rem;
+    }
+
+    .about p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .about-highlight {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--accent-soft);
+    }
+
+    .contact-card {
+      background: var(--card);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .contact-value a {
+      color: var(--accent-soft);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-style: dotted;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.3rem;
+    }
+
+    .social-links a {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .social-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent-soft);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      margin-top: 40px;
+      padding: 18px 0 26px;
+      background-color: #f0e5d4;
+      border-top: 1px solid var(--um-border-soft);
+      color: var(--um-text-muted);
+      font-size: 0.85rem;
+    }
+
+    .site-footer .main-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 780px) {
+      .hero {
+        grid-template-columns: 1fr;
+        margin-top: 1.5rem;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        right: 16px;
+        top: 60px;
+        flex-direction: column;
+        gap: 8px;
+        background-color: #ffffff;
+        padding: 10px 14px;
+        border-radius: 14px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(226, 214, 196, 0.9);
+        display: none;
+        z-index: 20;
+      }
+
+      .nav-links a {
+        padding: 6px 4px;
+      }
+
+      .nav-open .nav-links {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="main-wrap">
+      <div class="logo">
+        <img src="images/UM Logo2.JPG" class="logo-image" alt="Unfavored Merit Logo">
+        <span class="logo-text">Unfavored Merit</span>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="#music">Music</a>
+        <a href="#merch">Merch</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div>
+        <div class="hero-badge">
+          <span>New music, bold faith, fresh merch.</span>
+        </div>
+
+        <h1>
+          <span>Unfavored Merit</span> Music &amp; Merch is made to keep Jesus in the conversation. All created in cooperation with the Holy Spirit.
+        </h1>
+
+        <p class="hero-subtitle">
+          Stream the songs, grab the shirts, and share the message. One small brand, one big Savior.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="https://on.soundcloud.com/XCxNYqNwNfqlipv1DB" class="btn btn-primary" target="_blank" rel="noopener">
+            Listen on SoundCloud
+          </a>
+          <a href="#merch" class="btn btn-outline">Shop the merch</a>
+        </div>
+
+        <p class="hero-note"></p>
+      </div>
+
+      <aside class="hero-card" aria-label="Featured release">
+        <div class="hero-card-header">
+          <span>Featured Album</span>
+          <span class="pill">
+            <span class="pill-dot"></span>
+            <span>Now streaming</span>
+          </span>
+        </div>
+
+        <a href="https://soundcloud.com/unfavored-merit/sets/my-jesus-rocks" target="_blank" rel="noopener">
+          <div class="album-art">
+            <img src="images/My Jesus Rocks.jpg" alt="My Jesus Rocks album cover" class="album-cover-img">
+            <div class="album-title">
+              <span>My Jesus Rocks</span>
+              <span>Unfavored Merit</span>
+            </div>
+          </div>
+        </a>
+
+        <p class="album-tagline">
+          “He doesn't just love me — He fights for my heart.” — Stream it and share it.
+        </p>
+      </aside>
+    </section>
+
+
+
+<!-- FEATURED VIDEO -->
+<section class="featured-section featured-video-section">
+
+  <div class="section-header">
+    <h2>Featured Video</h2>
+    <p class="section-subtitle">
+      A visual story from Unfavored Merit — perfect for sharing, reflecting, and pointing hearts toward Jesus.
+    </p>
+  </div>
+
+  <div class="featured-card">
+    <div class="featured-media video-wrapper">
+      <!-- Replace the YouTube embed URL with your video -->
+    <!-- <iframe
+        src="https://i9.ytimg.com/vi_webp/9iYNl6q9xUg/mq1.webp?sqp=CJS5gMoG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYyg9MA8=&rs=AOn4CLDYQjlP_lXP-4e5x2U5B-GRL-iYdg"  
+        title="Featured Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe> -->
+
+<a 
+  href="https://www.youtube.com/watch?v=9iYNl6q9xUg" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  class="featured-video-link"
+>
+  <img 
+    src="https://i9.ytimg.com/vi_webp/9iYNl6q9xUg/mq1.webp?sqp=CJS5gMoG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYyg9MA8=&rs=AOn4CLDYQjlP_lXP-4e5x2U5B-GRL-iYdg" 
+    alt="Featured Video - Unfavored Merit"
+    class="featured-video-thumbnail"
+  />
+</a>
+
+
+    </div>
+
+    <div class="featured-content">
+      <!-- Change the title and description to match your video -->
+      <h3 class="featured-title">“Your Spirit is My Song”</h3>
+      <p class="featured-description">
+        St. James tells us "Make your hearts firm".  Hear are 3 questions to ask yourself
+        as you walk with Jesus.
+      </p>
+
+      <div class="featured-meta">
+        <span class="pill">Video</span>
+        <span class="pill-dot"></span>
+        <span class="pill">Unfavored Merit</span>
+      </div>
+
+      <!-- Button that opens the video on YouTube -->
+      <a
+        class="primary-button"
+        href="https://www.youtube.be/9iYNl6q9xUg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Watch on YouTube
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- MUSIC SECTION -->
+    <section id="music" class="section">
+      <div class="section-header">
+        <h2>Music</h2>
+        <p>
+          <strong>Original tracks written to point hearts to Christ. Tap a platform, hit play, and let the lyrics do
+          the talking.</strong>
+        </p>
+      </div>
+
+      <div class="music-grid">
+
+        <!-- Track 1 -->
+        <article class="music-card">
+          <div class="music-meta">
+            <div>
+              <div class="music-title">My Jesus Rocks</div>
+              <div class="music-tag">Single</div>
+            </div>
+            <div class="music-tag">Gospel / Funk</div>
+          </div>
+
+          <p class="music-desc">
+            High-energy praise with a groove — think Sunday service meets dance floor.
+          </p>
+
+          <div class="music-links">
+            <a class="chip-link" href="https://soundcloud.com/unfavored-merit/my-jesus-rocks-6" target="_blank">Listen</a>
+            <a class="chip-link" href="https://www.youtube.com/@UnfavoredMerit" target="_blank">Watch on YouTube</a>
+          </div>
+        </article>
+
+        <!-- Track 2 -->
+        <article class="music-card">
+          <div class="music-meta">
+            <div>
+              <div class="music-title">Let Go of the Clutter</div>
+              <div class="music-tag">Single</div>
+            </div>
+            <div class="music-tag">Gospel-Soul</div>
+          </div>
+
+          <p class="music-desc">
+            A soul-style reminder that the problem isn’t God’s signal — it’s our distractions.
+          </p>
+
+          <div class="music-links">
+            <a class="chip-link" href="https://soundcloud.com/unfavored-merit/let-go-of-the-clutter-4" target="_blank">Listen</a>
+            <a class="chip-link" href="https://youtu.be/UjDgdTGFuiY?si=KRO5RUSf47p1Phwp" target="_blank">Lyrics</a>
+          </div>
+        </article>
+
+        <!-- Track 3 -->
+        <article class="music-card">
+          <div class="music-meta">
+            <div>
+              <div class="music-title">Do You Know the Truth</div>
+              <div class="music-tag">Album</div>
+            </div>
+            <div class="music-tag">Southern Gospel</div>
+          </div>
+
+          <p class="music-desc">
+            Classic Southern Gospel feel, built around the question that matters most.
+          </p>
+
+          <div class="music-links">
+            <a class="chip-link" href="https://on.soundcloud.com/XCxNYqNwNfqlipv1DB" target="_blank">Listen</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MERCH SECTION -->
+    <section id="merch" class="section">
+      <div class="section-header">
+        <h2>Merch</h2>
+        <p>
+          <strong>Wearable conversation starters. Each design is built to be fun, modern, and just bold enough to point
+          someone to Jesus.</strong>
+        </p>
+      </div>
+
+      <div class="merch-grid">
+
+        <!-- Item 1 -->
+        <article class="merch-card">
+          <div class="merch-image">
+            <img src="images/Be Epic-fitted-scoop-t-shirt.jpg" alt="Be Epic Be Like Jesus Fitted Scoop T-Shirt" />
+          </div>
+          <div class="merch-body">
+            <div class="merch-name">“Be Epic Be Like Jesus” T-Shirt</div>
+            <div class="merch-price">Check our store for current price</div>
+            <a class="merch-link" href="https://www.redbubble.com/i/t-shirt/Be-Epic-by-UnfavoredMerit/171350287.PFN84?asc=u" target="_blank">
+              View on our merch store →
+            </a>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="merch-card">
+          <div class="merch-image">
+            <img src="images/God's Grace-premium-oversized-hoodie.jpg" alt="Cooperate With God's Grace Hoodie" />
+          </div>
+          <div class="merch-body">
+            <div class="merch-name">“Cooperate With God's Grace” Hoodie</div>
+            <div class="merch-price">Check our store for current price</div>
+            <a class="merch-link" href="https://www.redbubble.com/i/hoodie/God-s-Grace-by-UnfavoredMerit/171962793.6N9P2?asc=u" target="_blank">
+              View on our merch store →
+            </a>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="merch-card">
+          <div class="merch-image">
+            <img src="images/Christ in Me-premium-oversized-sweatshirt.jpg" alt="Christ in Me Infinite Love Sweatshirt" />
+          </div>
+          <div class="merch-body">
+            <div class="merch-name">“Christ in Me Infinite Love” Sweatshirt</div>
+            <div class="merch-price">Check our store for current price</div>
+            <a class="merch-link" href="https://www.redbubble.com/i/sweatshirt/Infinite-Love-with-Woman-by-UnfavoredMerit/172536095.E3041?asc=u" target="_blank">
+              View on our merch store →
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+<p style="text-align: center; max-width: 700px; margin: 0 auto 20px; font-size: 1rem;">
+  Explore more faith-inspired merchandise including clothing 
+  (t-shirts, hoodies, dresses), home & living items 
+  (mugs, pillows, tapestries), and accessories like 
+  stickers, phone cases, and bags — all designed to point 
+  people to Jesus in a modern, meaningful way.
+</p>
+
+<div style="text-align: center; margin-top: 15px;">
+  <a href="https://www.redbubble.com/people/UnfavoredMerit/explore"
+     class="btn btn-primary" 
+     target="_blank" 
+     rel="noopener">
+    See All Items By Design at the On-line Store
+  </a>
+</div>
+
+
+    </section>
+
+    <!-- ABOUT & CONTACT -->
+    <section id="about" class="section">
+      <div class="section-header">
+        <h2>About Unfavored Merit</h2>
+        <p>
+          This isn’t about being famous — it’s about being faithful. Unfavored Merit is a small creative project with a
+          big aim.
+        </p>
+      </div>
+
+      <div class="about">
+        <div>
+          <p>
+            Songs that sound like something you’d actually listen to — with lyrics that point you straight to the Gospel.
+          </p>
+          <p class="about-highlight">
+            The mission is to bring the story of our salvation to people, drawing people closer to God and one another through the Word of God. If even one conversation gets started because of a shirt or a song, this work is worth it.
+          </p>
+        </div>
+
+        <div id="contact">
+          <div class="contact-card">
+
+            <div class="contact-row">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">
+                <a href="mailto:unfavoredmerit@gmail.com">unfavoredmerit@gmail.com</a>
+              </span>
+            </div>
+
+            <div class="contact-row">
+              <span class="contact-label">Social &amp; Streaming</span>
+              <div class="social-links">
+                <a href="https://www.youtube.com/@UnfavoredMerit" target="_blank">YouTube</a>
+                <a href="https://on.soundcloud.com/XCxNYqNwNfqlipv1DB" target="_blank">SoundCloud</a>
+                <a href="https://music.youtube.com/channel/UCWFAnxiVoKlGDi7pE3lBJUg" target="_blank">YouTube Music</a>
+                <a href="https://open.spotify.com/artist/6KhDE8ZNybXQLQPjTxUUEG" target="_blank">Spotify</a>
+                <a href="https://www.redbubble.com/people/UnfavoredMerit/shop" target="_blank">Merch Store</a>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <span class="contact-label">Creative Permissions</span>
+              <span class="contact-value">
+                For using songs in church, classrooms, or videos, reach out by email. All music is owned, written, produced, and published by Unfavored Merit LLC. All merch artwork designs are owned and created by Unfavored Merit LLC.
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  
+    <!-- RIGHTS & LICENSING SECTION -->
+    <section id="rights-licensing" class="section">
+      <div class="section-header">
+        <h2>Rights & Licensing</h2>
+      </div>
+
+      <p>
+        Unfavored Merit LLC — independent Christian music creator and producer. All tracks on this account were created by Unfavored Merit using Suno AI. Under Suno’s Terms of Service, the creator is granted full ownership and commercial rights to every composition and sound recording generated on the platform.
+      </p>
+
+      <p>
+        All music posted here — including lyrics, melodies, vocal performances, and instrumental arrangements — is owned and administered by Unfavored Merit LLC.
+        Streaming, playlist placement, public playback, public playback, and sharing of links are encouraged. For licensing, sync use, collaborations, or commercial permissions, please contact Unfavored Merit LLC directly.
+      </p>
+
+      <p>
+        © Unfavored Merit LLC — Composition Rights<br>
+        ℗ Unfavored Merit LLC — Sound Recording Rights<br>
+        All Rights Reserved.
+      </p>
+    </section>
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="main-wrap">
+      <div>
+        © <span id="year"></span> Unfavored Merit LLC. All rights reserved. Built to point people to Jesus.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-set year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const body = document.body;
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = body.classList.toggle('nav-open');
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    // Close menu on nav link click (mobile)
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (body.classList.contains('nav-open')) {
+          body.classList.remove('nav-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
