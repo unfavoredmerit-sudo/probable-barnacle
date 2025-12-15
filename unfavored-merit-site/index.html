@@ -113,7 +113,7 @@
     }
 
     .logo-image {
-      height: 52px;
+      height: 150px;
       width: auto;
       display: block;
     }
@@ -122,14 +122,14 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      font-size: 0.85rem;
+      font-size: 1.50rem;
       color: var(--um-gold-dark);
     }
 
     .nav-links {
       display: flex;
       gap: 18px;
-      font-size: 0.95rem;
+      font-size: 1.50rem;
     }
 
     .nav-links a {
@@ -196,7 +196,7 @@
       border-radius: 999px;
       border: 1px solid rgba(200, 154, 43, 0.4);
       background-color: rgba(250, 248, 242, 0.9);
-      font-size: 0.75rem;
+      font-size: 1.2rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--um-gold-dark);
@@ -209,7 +209,7 @@
     }
 
     .hero-subtitle {
-      font-size: 1rem;
+      font-size: 1.20rem;
       color: var(--um-text-muted);
       max-width: 540px;
     }
@@ -318,6 +318,96 @@
       color: var(--accent-soft);
     }
 
+
+    /* FEATURED VIDEO */
+    .featured-video-section {
+      max-width: 80%;    /* shrink the overall card so it doesn’t overpower */
+      margin: 0 auto;
+    }
+
+    .featured-card {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 1.5rem;
+      align-items: stretch;
+      background: var(--card);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      box-shadow: var(--um-shadow-soft);
+    }
+
+    .featured-media {
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .video-wrapper img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .featured-title {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .featured-description {
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .primary-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.5rem;
+      padding: 0.65rem 1.3rem;
+      border-radius: var(--um-radius-pill);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      background: var(--um-gold);
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+                  background-color 0.12s ease, color 0.12s ease;
+    }
+
+    .primary-button:hover {
+      background: var(--um-gold-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(200, 154, 43, 0.4);
+    }
+
+
+
     /* SECTIONS */
     .section {
       margin-top: 40px;
@@ -336,10 +426,12 @@
     }
 
     .section-header p {
-      font-size: 0.85rem;
+      font-size: 1.2rem;
       color: var(--muted);
       max-width: 420px;
     }
+
+    
 
     /* BUTTONS */
     .btn {
@@ -503,6 +595,17 @@
     }
 
     /* ABOUT & CONTACT */
+
+    /* ABOUT / CONTACT */
+
+     #about p {
+       font-size: 1.1rem;
+       line-height: 1.65;
+       color: var(--text-main);
+       max-width: 650px;
+     }
+
+
     .about {
       display: grid;
       grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
@@ -708,6 +811,75 @@
         </p>
       </aside>
     </section>
+
+
+
+<!-- FEATURED VIDEO -->
+<section class="featured-section featured-video-section">
+
+  <div class="section-header">
+    <h2>Featured Video</h2>
+    <p class="section-subtitle">
+      A visual story from Unfavored Merit — perfect for sharing, reflecting, and pointing hearts toward Jesus.
+    </p>
+  </div>
+
+  <div class="featured-card">
+    <div class="featured-media video-wrapper">
+      <!-- Replace the YouTube embed URL with your video -->
+    <!-- <iframe
+        src="https://i9.ytimg.com/vi_webp/9iYNl6q9xUg/mq1.webp?sqp=CJS5gMoG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYyg9MA8=&rs=AOn4CLDYQjlP_lXP-4e5x2U5B-GRL-iYdg"  
+        title="Featured Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe> -->
+
+<a 
+  href="https://www.youtube.com/watch?v=9iYNl6q9xUg" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  class="featured-video-link"
+>
+  <img 
+    src="https://i9.ytimg.com/vi_webp/9iYNl6q9xUg/mq1.webp?sqp=CJS5gMoG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYyg9MA8=&rs=AOn4CLDYQjlP_lXP-4e5x2U5B-GRL-iYdg" 
+    alt="Featured Video - Unfavored Merit"
+    class="featured-video-thumbnail"
+  />
+</a>
+
+
+    </div>
+
+    <div class="featured-content">
+      <!-- Change the title and description to match your video -->
+      <h3 class="featured-title">“Your Spirit is My Song”</h3>
+      <p class="featured-description">
+        St. James tells us "Make your hearts firm".  Hear are 3 questions to ask yourself
+        as you walk with Jesus.
+      </p>
+
+      <div class="featured-meta">
+        <span class="pill">Video</span>
+        <span class="pill-dot"></span>
+        <span class="pill">Unfavored Merit</span>
+      </div>
+
+      <!-- Button that opens the video on YouTube -->
+      <a
+        class="primary-button"
+        href="https://www.youtube.be/9iYNl6q9xUg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Watch on YouTube
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
 
     <!-- MUSIC SECTION -->
     <section id="music" class="section">
