@@ -337,18 +337,106 @@
       box-shadow: var(--um-shadow-soft);
     }
 
-    .featured-media {
-      border-radius: 1rem;
-      overflow: hidden;
-    }
+
+
+/* FEATURED VIDEO 16:9 THUMBNAIL */
+.featured-media {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* 16:9 aspect ratio container */
+.video-frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16 / 9 = 0.5625 */
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+/* Make the image fill the 16:9 box */
+.video-frame img.featured-video-thumbnail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.28s ease, filter 0.28s ease;
+}
+
+
+.featured-video-thumbnail {
+  position: absolute;
+  inset: 0;                 /* stretch to edges */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fill the 16:9 area beautifully */
+  display: block;
+}
+
+
+/* The link fills the frame */
+.featured-video-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* Overlay wrapper (clicks still go through) */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;  /* important: link still clickable */
+}
+
+/* Subtle dark gradient at the bottom */
+.video-gradient {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+}
+
+/* Play button */
+.video-play-button {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+/* Hover effects: zoom image + brighten + bump play button */
+.featured-video-link:hover .featured-video-thumbnail {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.featured-video-link:hover .video-play-button {
+  transform: scale(1.08);
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.75);
+}
 
     .video-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      aspect-ratio: 16 / 9; /* 16:9 aspect ratio */
       border-radius: 1rem;
       overflow: hidden;
-    }
+    } 
 
     .video-wrapper img {
       position: absolute;
@@ -601,9 +689,9 @@
      #about p {
        font-size: 1.1rem;
        line-height: 1.65;
-       color: var(--text-main);
+       color: red;
        max-width: 650px;
-     }
+     } /* var(--text-main) /
 
 
     .about {
@@ -624,15 +712,17 @@
     }
 
     .contact-card {
-      background: var(--card);
+      background: rgba(255, 255, 255, 0.95);       /* slightly brighter panel */
       border-radius: 1rem;
-      border: 1px solid var(--border);
-      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);  /* stronger border */
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12); /* subtle shadow for “card” look */
+      padding: 1.2rem 1.4rem;
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-      font-size: 0.9rem;
-    }
+      gap: 0.8rem;
+      font-size: 1.3rem;
+}
+
 
     .contact-row {
       display: flex;
@@ -641,17 +731,18 @@
     }
 
     .contact-label {
-      font-size: 0.75rem;
+      font-size: 1.3rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
     }
 
     .contact-value a {
+      font-size: 1.3rem;
       color: var(--accent-soft);
       text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-style: dotted;
+      text-underline-offset: 3.5px;
+      text-decoration-style: solid;
     }
 
     .social-links {
@@ -662,10 +753,10 @@
     }
 
     .social-links a {
-      font-size: 0.8rem;
+      font-size: 1.3rem;
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid var(--border);
+      border: 2px solid var(--border);
       color: var(--muted);
     }
 
@@ -824,17 +915,9 @@
     </p>
   </div>
 
-  <div class="featured-card">
-    <div class="featured-media video-wrapper">
-      <!-- Replace the YouTube embed URL with your video -->
-    <!-- <iframe
-        src="https://i9.ytimg.com/vi_webp/9iYNl6q9xUg/mq1.webp?sqp=CJS5gMoG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYyg9MA8=&rs=AOn4CLDYQjlP_lXP-4e5x2U5B-GRL-iYdg"  
-        title="Featured Video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe> -->
-
+  <div class="featured-media">
+    <div class="video-frame">
+      
 <a 
   href="https://www.youtube.com/watch?v=9iYNl6q9xUg" 
   target="_blank" 
@@ -842,14 +925,22 @@
   class="featured-video-link"
 >
   <img 
-    src="https://i9.ytimg.com/vi_webp/9iYNl6q9xUg/mq1.webp?sqp=CJS5gMoG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYyg9MA8=&rs=AOn4CLDYQjlP_lXP-4e5x2U5B-GRL-iYdg" 
+    src="images/featured-video-thumb.jpg" 
     alt="Featured Video - Unfavored Merit"
     class="featured-video-thumbnail"
   />
-</a>
 
 
-    </div>
+ <!-- Overlay (gradient + play button) -->
+      <div class="video-overlay">
+        <div class="video-gradient"></div>
+        <div class="video-play-button">
+          ▶
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
 
     <div class="featured-content">
       <!-- Change the title and description to match your video -->
@@ -868,7 +959,7 @@
       <!-- Button that opens the video on YouTube -->
       <a
         class="primary-button"
-        href="https://www.youtube.be/9iYNl6q9xUg"
+        href="https://youtu.be/9iYNl6q9xUg"
         target="_blank"
         rel="noopener noreferrer"
       >
